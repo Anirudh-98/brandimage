@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+/* Desktop viewports tall enough for the roomier homepage hero */
+@custom-variant tall (@media (min-height: 760px));
+
+/*
+ * 60-30-10 system for the inner pages.
+ * 60% canvas: white background, muted body copy (text-ink/70), ambient photos.
+ * 30% structure: ink headings, surface cards, line borders and dividers.
+ * 10% accent: CTAs, links, active states, icons and badges only.
+ */
+@theme {
+  --color-canvas: #ffffff;
+  --color-ink: #2a1a5e;
+  --color-surface: #f5f3fa;
+  --color-line: #e3deef;
+  --color-accent: #c2005f;
+  --color-accent-strong: #a80052;
+}
+
+@layer base {
+  :root {
+    --background: #ffffff;
+    --foreground: #111827;
+    --brand-magenta: #e60073;
+    --brand-magenta-dark: #cc0066;
+    --brand-magenta-light: #fce7f3;
+    --brand-purple: #572b8a;
+    --brand-navy: #0f172a;
+    --brand-blue: #1e4fa3;
+    --brand-green: #159447;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #ffffff;
+    color: #111827;
+    font-family: var(--font-poppins), system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+}
+
+.font-script {
+  font-family: var(--font-script), cursive;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #e60073;
+  border-radius: 3px;
+}
