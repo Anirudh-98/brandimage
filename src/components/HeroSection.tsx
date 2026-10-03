@@ -68,13 +68,16 @@ export default function HeroSection() {
 
         {/* Center Panel: Studio Panel Discussion */}
         <div className="order-1 lg:order-2 sm:col-span-2 lg:col-span-6 relative h-[230px] sm:h-[280px] lg:h-full overflow-hidden bg-slate-100">
-          <Image
-            src="/assets/gen/hero-center.jpg"
-            alt="Brand Image studio panel discussion with six experts"
-            fill
-            sizes="(max-width: 1024px) 100vw, 50vw"
-            className="object-cover object-[center_42%]"
-            priority
+          <video
+            src="/herovideo.mp4"
+            poster="/assets/gen/hero-center.jpg"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            aria-label="Brand Image studio panel discussion"
+            className="absolute inset-0 w-full h-full object-cover"
           />
 
           {/* 360 camera label */}
