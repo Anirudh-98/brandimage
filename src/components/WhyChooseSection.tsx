@@ -97,24 +97,24 @@ export default function WhyChooseSection() {
         </div>
 
         {/* Center: 8 Feature Items with Round Icons */}
-        <div className="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-8 gap-1.5 sm:gap-2 flex-1 w-full justify-items-center items-center py-1 px-1">
+        <div className="grid grid-cols-2 sm:grid-cols-4 xl:grid-cols-8 gap-x-2 gap-y-1 lg:gap-y-0 xl:gap-2 flex-1 w-full items-center py-1 px-2 lg:px-1">
           {features.map((item, idx) => {
             const Icon = item.icon;
             return (
               <div
                 key={idx}
-                className="flex items-center gap-1.5 p-1 rounded-lg hover:bg-slate-50 transition-colors w-full justify-center lg:justify-start"
+                className="flex items-center gap-1.5 p-1 lg:py-0.5 xl:p-1 rounded-lg hover:bg-slate-50 transition-colors w-full min-w-0"
               >
                 <div
-                  className={`w-8 h-8 xl:w-9 xl:h-9 rounded-full ${item.bgColor} flex items-center justify-center flex-shrink-0 shadow-sm`}
+                  className={`w-8 h-8 lg:w-6 lg:h-6 xl:w-7 xl:h-7 2xl:w-9 2xl:h-9 rounded-full ${item.bgColor} flex items-center justify-center flex-shrink-0 shadow-sm`}
                 >
-                  <Icon className="w-4 h-4 xl:w-5 xl:h-5 text-white" />
+                  <Icon className="w-4 h-4 lg:w-3.5 lg:h-3.5 xl:w-4 xl:h-4 2xl:w-5 2xl:h-5 text-white" />
                 </div>
-                <div className="flex flex-col text-left leading-tight">
-                  <span className="text-[9.5px] xl:text-[11px] font-semibold text-[#3B1F7A]">
+                <div className="flex flex-col lg:flex-row lg:gap-1 xl:flex-col xl:gap-0 text-left leading-tight min-w-0">
+                  <span className="text-[11px] lg:text-[9.5px] xl:text-[10px] 2xl:text-[11px] font-semibold text-[#3B1F7A] whitespace-nowrap">
                     {item.label1}
                   </span>
-                  <span className="text-[9.5px] xl:text-[11px] font-semibold text-[#3B1F7A]">
+                  <span className="text-[11px] lg:text-[9.5px] xl:text-[10px] 2xl:text-[11px] font-semibold text-[#3B1F7A] whitespace-nowrap">
                     {item.label2}
                   </span>
                 </div>

@@ -206,12 +206,12 @@ export default function ContentGrid() {
             {popularCategories.map((cat) => (
               <div
                 key={cat.name}
-                className={`${cat.bgColor} border rounded-lg p-1 lg:py-0 tall:py-1 flex flex-col items-center justify-center text-center cursor-pointer hover:shadow-xs hover:scale-105 transition-all duration-150 h-[56px] lg:h-auto lg:min-h-0 overflow-hidden`}
+                className={`${cat.bgColor} border rounded-lg p-1 lg:p-0.5 xl:px-1 xl:tall:py-1 flex flex-col items-center justify-center text-center cursor-pointer hover:shadow-xs hover:scale-105 transition-all duration-150 h-[56px] lg:h-auto lg:min-h-0 overflow-hidden`}
               >
                 <cat.icon
-                  className={`w-5 h-5 lg:w-4 lg:h-4 tall:w-6 tall:h-6 tall:mb-0.5 flex-shrink-0 ${cat.color}`}
+                  className={`w-5 h-5 lg:w-4 lg:h-4 xl:tall:w-6 xl:tall:h-6 xl:tall:mb-0.5 flex-shrink-0 ${cat.color}`}
                 />
-                <span className="text-[8px] xl:text-[9px] font-bold text-slate-800 leading-[1.1] truncate max-w-full tall:whitespace-normal tall:line-clamp-2">
+                <span className="text-[8px] lg:text-[7.5px] xl:text-[9px] font-bold text-slate-800 leading-[1.1] line-clamp-2 max-w-full break-words">
                   {cat.name}
                 </span>
               </div>
@@ -246,7 +246,7 @@ export default function ContentGrid() {
 
               {/* Quote */}
               <div className="flex-1 min-w-0 self-center">
-                <p className="text-[9.5px] xl:text-[11px] text-slate-700 italic leading-[1.3] font-medium line-clamp-4 tall:line-clamp-none">
+                <p className="text-[9.5px] xl:text-[11px] text-slate-700 italic leading-[1.3] font-medium line-clamp-4 xl:tall:line-clamp-none">
                   {testimonials[currentStoryIndex].quote}
                 </p>
                 <div className="mt-1.5">
@@ -299,9 +299,9 @@ export default function ContentGrid() {
         <div className="lg:col-span-3 bg-white rounded-lg border border-pink-100 shadow-sm overflow-hidden flex flex-col lg:min-h-0">
           {/* Header Bar with Live Badge */}
           <div className="bg-gradient-to-r from-[#FDEAF4] to-[#F3E8FF] px-3 py-1 border-b border-pink-100 flex items-center justify-between">
-            <div className="flex items-center gap-1.5">
+            <div className="flex items-center gap-1.5 min-w-0">
               <Calendar className="w-3.5 h-3.5 text-[#1E4FA3]" />
-              <h4 className="font-bold text-[12px] xl:text-[13px] text-[#3B1F7A]">
+              <h4 className="font-bold text-[12px] xl:text-[13px] text-[#3B1F7A] truncate">
                 Upcoming Live Programme
               </h4>
             </div>
@@ -313,25 +313,48 @@ export default function ContentGrid() {
 
           {/* Event Content */}
           <div className="p-2 flex-1 min-h-0 flex flex-col justify-between">
-            <div>
+            <div className="flex items-start justify-between gap-2">
+              <div className="min-w-0">
               <h5 className="font-bold text-[11px] sm:text-[11.5px] text-slate-800 leading-tight">
                 Expert Panel Discussion
               </h5>
               <p className="text-[10px] text-[#E60073] font-semibold leading-tight mb-1">
                 Safe Skin Care for Every Age
               </p>
-              <div className="flex items-center gap-2 text-[9.5px] text-slate-500 font-medium">
+              <div className="flex flex-wrap items-center gap-x-2 text-[9.5px] text-slate-500 font-medium">
                 <span>Date: 15 Oct 2026</span>
                 <span>•</span>
                 <span>Time: 4:00 PM</span>
               </div>
+              </div>
+              {/* Set Reminder Button */}
+            <button
+              onClick={() => setReminderSet(!reminderSet)}
+              className={`flex items-center gap-1 flex-shrink-0 whitespace-nowrap text-[10px] font-bold px-2.5 py-1 rounded-full transition-all shadow-2xs ${
+                reminderSet
+                  ? "bg-emerald-600 text-white"
+                  : "bg-[#572B8A] hover:bg-[#45216e] text-white"
+              }`}
+            >
+              {reminderSet ? (
+                <>
+                  <Check className="w-3 h-3 stroke-[3]" />
+                  <span className="lg:hidden xl:inline">Reminder Set</span>
+                </>
+              ) : (
+                <>
+                  <Bell className="w-3 h-3" />
+                  <span className="lg:hidden xl:inline">Set Reminder</span>
+                </>
+              )}
+            </button>
             </div>
 
             {/* 4 Speaker Portraits */}
-            <div className="grid grid-cols-4 gap-1.5 my-1">
+            <div className="grid grid-cols-4 gap-1.5 mt-1">
               {speakers.map((spk) => (
                 <div key={spk.name} className="flex flex-col items-center">
-                  <div className="relative w-8 h-8 xl:w-10 xl:h-10 tall:w-12 tall:h-12 rounded-lg overflow-hidden border border-purple-200 shadow-2xs">
+                  <div className="relative w-8 h-8 xl:w-10 xl:h-10 xl:tall:w-12 xl:tall:h-12 rounded-lg overflow-hidden border border-purple-200 shadow-2xs">
                     <Image
                       src={spk.image}
                       alt={spk.name}
@@ -340,36 +363,13 @@ export default function ContentGrid() {
                       className="object-cover"
                     />
                   </div>
-                  <span className="text-[7.5px] xl:text-[8.5px] font-semibold text-slate-700 text-center leading-[1.1] mt-0.5 line-clamp-1">
+                  <span className="text-[7.5px] xl:text-[8.5px] font-semibold text-slate-700 text-center leading-[1.1] mt-0.5 line-clamp-2">
                     {spk.name}
                   </span>
                 </div>
               ))}
             </div>
 
-            {/* Set Reminder Button */}
-            <div className="flex justify-end">
-              <button
-                onClick={() => setReminderSet(!reminderSet)}
-                className={`flex items-center gap-1 text-[10px] font-bold px-3 py-0.5 rounded-full transition-all shadow-2xs ${
-                  reminderSet
-                    ? "bg-emerald-600 text-white"
-                    : "bg-[#572B8A] hover:bg-[#45216e] text-white"
-                }`}
-              >
-                {reminderSet ? (
-                  <>
-                    <Check className="w-3 h-3 stroke-[3]" />
-                    <span>Reminder Set</span>
-                  </>
-                ) : (
-                  <>
-                    <Bell className="w-3 h-3" />
-                    <span>Set Reminder</span>
-                  </>
-                )}
-              </button>
-            </div>
           </div>
         </div>
       </div>

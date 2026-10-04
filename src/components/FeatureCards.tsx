@@ -123,10 +123,10 @@ export default function FeatureCards() {
                   <Icon className="w-3.5 h-3.5 xl:w-4 xl:h-4 text-white" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <h3 className="font-bold text-[11px] xl:text-[12.5px] text-[#0B132B] leading-tight truncate group-hover:text-[#E60073] transition-colors">
+                  <h3 className="font-bold text-[11px] xl:text-[12.5px] text-[#0B132B] leading-tight line-clamp-2 group-hover:text-[#E60073] transition-colors">
                     {card.title}
                   </h3>
-                  <p className="text-[8.5px] xl:text-[9.5px] text-slate-600 leading-[1.25] line-clamp-2 tall:line-clamp-3 mt-0.5">
+                  <p className="text-[8.5px] xl:text-[9.5px] text-slate-600 leading-[1.25] line-clamp-2 xl:tall:line-clamp-3 mt-0.5">
                     {card.description}
                   </p>
                 </div>

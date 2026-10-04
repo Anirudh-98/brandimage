@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Play, CheckCircle2, ChevronRight, X, Wifi } from "lucide-react";
+import { Play, CheckCircle2, ChevronRight, X } from "lucide-react";
 
 const leftChecks = [
   "Expert Guidance",
@@ -19,15 +19,6 @@ const rightChecks = [
   "Q & A Sessions",
   "Training Videos",
   "Success Stories",
-];
-
-const panelRoles = [
-  { title: "Manufacturer", desc: "Product Insights" },
-  { title: "Dermatologist", desc: "Skin & Hair Health" },
-  { title: "Moderator", desc: "(Sr. Beautician)" },
-  { title: "Cosmetic Doctor", desc: "Aesthetic & Anti-Ageing" },
-  { title: "Distributor", desc: "Market Availability" },
-  { title: "Beauty Professional", desc: "Salon Services" },
 ];
 
 export default function HeroSection() {
@@ -46,19 +37,19 @@ export default function HeroSection() {
             className="object-cover object-left"
             priority
           />
-          <div className="absolute inset-y-0 right-0 w-[56%] flex flex-col items-center justify-center gap-1.5 tall:gap-3 px-2 py-1.5">
-            <p className="text-center font-extrabold uppercase leading-[1.15] text-[11px] xl:text-[13px] tall:text-[15px] text-[#159447]">
+          <div className="absolute inset-y-0 right-0 w-[58%] lg:w-[60%] xl:w-[56%] flex flex-col items-center justify-center gap-1.5 xl:tall:gap-3 px-1.5 py-1.5">
+            <p className="text-center font-extrabold uppercase leading-[1.15] text-[13px] lg:text-[10px] xl:text-[13px] xl:tall:text-[15px] text-[#159447]">
               Good Skin
               <span className="block text-[#3B1F7A]">Healthy You</span>
               <span className="block">Confident Tomorrow</span>
             </p>
-            <ul className="bg-white/85 backdrop-blur-xs rounded-lg shadow-sm px-2 py-1 tall:py-2 flex flex-col gap-0.5 tall:gap-1.5">
+            <ul className="bg-white/85 backdrop-blur-xs rounded-lg shadow-sm px-2 py-1 xl:tall:py-2 flex flex-col gap-0.5 xl:tall:gap-1.5">
               {leftChecks.map((item) => (
                 <li
                   key={item}
-                  className="flex items-center gap-1 text-[9px] xl:text-[10px] tall:text-[11.5px] font-semibold text-slate-800 whitespace-nowrap"
+                  className="flex items-center gap-1 text-[10.5px] lg:text-[8.5px] xl:text-[10px] xl:tall:text-[11.5px] font-semibold text-slate-800 whitespace-nowrap"
                 >
-                  <CheckCircle2 className="w-3 h-3 tall:w-3.5 tall:h-3.5 text-white fill-[#159447] flex-shrink-0" />
+                  <CheckCircle2 className="w-3 h-3 xl:tall:w-3.5 xl:tall:h-3.5 text-white fill-[#159447] flex-shrink-0" />
                   {item}
                 </li>
               ))}
@@ -79,34 +70,6 @@ export default function HeroSection() {
             aria-label="Brand Image studio panel discussion"
             className="absolute inset-0 w-full h-full object-cover"
           />
-
-          {/* 360 camera label */}
-          <div className="absolute top-1 left-1/2 -translate-x-1/2 bg-white/90 rounded-md shadow-sm px-2.5 py-0.5 text-center leading-tight">
-            <span className="flex items-center justify-center gap-1 text-[9.5px] xl:text-[10.5px] font-bold text-[#3B1F7A] whitespace-nowrap">
-              <Wifi className="w-3 h-3 text-[#E60073]" />
-              360° WiFi Cloud Camera
-            </span>
-            <span className="block text-[8.5px] xl:text-[9.5px] font-medium text-slate-600 whitespace-nowrap">
-              Auto Recording / Live Streaming
-            </span>
-          </div>
-
-          {/* Panel name plates */}
-          <div className="absolute bottom-1 inset-x-1.5 grid grid-cols-6 gap-1">
-            {panelRoles.map((role) => (
-              <div
-                key={role.title}
-                className="bg-white/95 rounded shadow-sm px-0.5 py-0.5 text-center leading-tight overflow-hidden"
-              >
-                <span className="block text-[8px] xl:text-[9.5px] font-bold text-[#3B1F7A] truncate">
-                  {role.title}
-                </span>
-                <span className="hidden sm:block text-[7px] xl:text-[8px] font-medium text-slate-600 truncate">
-                  {role.desc}
-                </span>
-              </div>
-            ))}
-          </div>
         </div>
 
         {/* Right Panel: Beauty Talks Live & Pre-Recorded */}
@@ -119,40 +82,40 @@ export default function HeroSection() {
             className="object-cover object-right"
             priority
           />
-          <div className="absolute inset-y-0 left-0 w-[58%] flex flex-col justify-center gap-1 tall:gap-2.5 pl-3 pr-1 py-1.5">
+          <div className="absolute inset-y-0 left-0 w-[60%] flex flex-col justify-center gap-1 xl:tall:gap-2.5 pl-3 lg:pl-2 xl:pl-3 pr-1 py-1.5">
             <div className="flex items-center gap-1.5">
-              <span className="w-7 h-5 tall:w-9 tall:h-6 rounded-md bg-red-600 flex items-center justify-center flex-shrink-0 shadow-sm">
+              <span className="w-7 h-5 xl:tall:w-9 xl:tall:h-6 rounded-md bg-red-600 flex items-center justify-center flex-shrink-0 shadow-sm">
                 <Play className="w-3 h-3 fill-white text-white" />
               </span>
-              <p className="font-extrabold uppercase leading-none text-[#E60073] text-[13px] xl:text-[15px] tall:text-[18px] whitespace-nowrap">
+              <p className="font-extrabold uppercase leading-none text-[#E60073] text-[15px] lg:text-[11.5px] xl:text-[15px] xl:tall:text-[18px] whitespace-nowrap">
                 Beauty Talks
-                <span className="block text-[8px] xl:text-[9px] tall:text-[10.5px] mt-0.5">
+                <span className="block text-[8px] xl:text-[9px] xl:tall:text-[10.5px] mt-0.5">
                   Live &amp; Pre-Recorded
                 </span>
               </p>
             </div>
-            <ul className="flex flex-col gap-0.5 tall:gap-1.5">
+            <ul className="flex flex-col gap-0.5 xl:tall:gap-1.5">
               {rightChecks.map((item) => (
                 <li
                   key={item}
-                  className="flex items-center gap-1 text-[9px] xl:text-[10px] tall:text-[11.5px] font-semibold text-slate-800 whitespace-nowrap"
+                  className="flex items-center gap-1 text-[10.5px] lg:text-[8.5px] xl:text-[10px] xl:tall:text-[11.5px] font-semibold text-slate-800 whitespace-nowrap"
                 >
-                  <CheckCircle2 className="w-3 h-3 tall:w-3.5 tall:h-3.5 text-white fill-[#E60073] flex-shrink-0" />
+                  <CheckCircle2 className="w-3 h-3 xl:tall:w-3.5 xl:tall:h-3.5 text-white fill-[#E60073] flex-shrink-0" />
                   {item}
                 </li>
               ))}
             </ul>
             <button
               onClick={() => setVideoModalOpen(true)}
-              className="self-start bg-[#E60073] hover:bg-[#cc0066] text-white font-bold text-[11px] tall:text-[13px] pl-3 pr-1 py-0.5 tall:py-1 rounded-full shadow-md flex items-center gap-2 transition-colors"
+              className="self-start bg-[#E60073] hover:bg-[#cc0066] text-white font-bold text-[11px] xl:tall:text-[13px] pl-3 pr-1 py-0.5 xl:tall:py-1 rounded-full shadow-md flex items-center gap-2 transition-colors"
             >
               Watch Now
-              <span className="w-4 h-4 tall:w-5 tall:h-5 rounded-full bg-white text-[#E60073] flex items-center justify-center">
+              <span className="w-4 h-4 xl:tall:w-5 xl:tall:h-5 rounded-full bg-white text-[#E60073] flex items-center justify-center">
                 <ChevronRight className="w-3 h-3 stroke-[3]" />
               </span>
             </button>
           </div>
-          <p className="hidden tall:block absolute bottom-1.5 right-2 text-right font-extrabold uppercase leading-[1.2] text-[10px] xl:text-[11px] text-[#3B1F7A] [text-shadow:0_0_6px_white,0_0_6px_white]">
+          <p className="hidden xl:tall:block absolute bottom-1.5 right-2 text-right font-extrabold uppercase leading-[1.2] text-[10px] xl:text-[11px] text-[#3B1F7A] [text-shadow:0_0_6px_white,0_0_6px_white]">
             Learn
             <br />
             Connect

@@ -16,9 +16,11 @@ export const CONTACT = {
   address:
     "# 407, South Block, Archana Arcade, Secunderabad - 500 003, Telangana, India",
   phone: "8985120237",
+  phone2: "8985197720",
   email: "info@brandimage.in",
   partnerEmail: "partner@brandimage.in",
-  website: "www.brandimage.in",
+  website: "www.brandimage.beauty",
+  websiteUrl: "https://www.brandimage.beauty/",
 };
 
 export const NAV_LINKS = [
@@ -472,7 +474,12 @@ export function SiteFooter() {
           </li>
           <li className="flex items-center gap-3">
             <Globe className="w-4 h-4 text-accent flex-shrink-0" />
-            <span>{CONTACT.website}</span>
+            <a
+              href={CONTACT.websiteUrl}
+              className="hover:text-accent transition-colors"
+            >
+              {CONTACT.website}
+            </a>
           </li>
         </ul>
       </div>

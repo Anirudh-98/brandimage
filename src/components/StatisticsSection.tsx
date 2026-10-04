@@ -77,28 +77,28 @@ export default function StatisticsSection() {
     <section className="w-full max-w-[1920px] mx-auto px-2 lg:px-2.5 py-1">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-2 items-stretch">
         {/* Left Side: Statistics Strip */}
-        <div className="lg:col-span-8 bg-gradient-to-r from-[#FDEAF4] via-[#FFF5FA] to-[#F6E9FB] rounded-lg border border-pink-100 shadow-sm px-2 py-1.5 flex items-center">
+        <div className="lg:col-span-9 xl:col-span-8 bg-gradient-to-r from-[#FDEAF4] via-[#FFF5FA] to-[#F6E9FB] rounded-lg border border-pink-100 shadow-sm px-2 py-1.5 flex items-center">
           <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-x-1 gap-y-2 w-full">
             {stats.map((stat, idx) => {
               const Icon = stat.icon;
               return (
                 <div key={idx} className="flex items-center gap-1.5 min-w-0">
                   <div
-                    className={`w-8 h-8 xl:w-9 xl:h-9 rounded-full ${stat.bgColor} flex items-center justify-center flex-shrink-0 shadow-sm`}
+                    className={`w-8 h-8 lg:w-7 lg:h-7 xl:w-9 xl:h-9 rounded-full ${stat.bgColor} flex items-center justify-center flex-shrink-0 shadow-sm`}
                   >
                     <Icon className="w-4 h-4 xl:w-5 xl:h-5 text-white" />
                   </div>
                   <div className="flex flex-col min-w-0">
                     {stat.value && (
-                      <span className="font-extrabold text-[14px] xl:text-[17px] text-[#3B1F7A] leading-none">
+                      <span className="font-extrabold text-[14px] lg:text-[12.5px] xl:text-[17px] text-[#3B1F7A] leading-none whitespace-nowrap">
                         {stat.value}
                       </span>
                     )}
                     <span
                       className={`leading-tight ${
                         stat.isSpecial
-                          ? "text-[10px] xl:text-[11.5px] font-bold text-[#3B1F7A]"
-                          : "text-[8.5px] xl:text-[9.5px] font-medium text-slate-600 mt-0.5"
+                          ? "text-[10px] lg:text-[8.5px] xl:text-[11.5px] font-bold text-[#3B1F7A]"
+                          : "text-[8.5px] lg:text-[8px] xl:text-[9.5px] font-medium text-slate-600 mt-0.5"
                       }`}
                     >
                       {stat.label}
@@ -113,7 +113,7 @@ export default function StatisticsSection() {
         {/* Right Side: Member Privileges Banner */}
         <div
           onClick={() => setPrivilegeModalOpen(true)}
-          className="lg:col-span-4 rounded-lg overflow-hidden shadow-sm relative cursor-pointer hover:shadow-md transition-shadow group min-h-[64px] bg-[#8A0F5C]"
+          className="lg:col-span-3 xl:col-span-4 rounded-lg overflow-hidden shadow-sm relative cursor-pointer hover:shadow-md transition-shadow group min-h-[64px] bg-[#8A0F5C]"
         >
           <Image
             src="/assets/gen/privileges-bg.jpg"
@@ -122,12 +122,12 @@ export default function StatisticsSection() {
             sizes="(max-width: 1024px) 100vw, 35vw"
             className="object-cover object-[center_78%] group-hover:scale-[1.02] transition-transform duration-200"
           />
-          <div className="relative h-full flex items-center justify-center gap-3 xl:gap-5 px-[19%] py-1">
+          <div className="relative h-full flex items-center justify-center gap-3 xl:gap-5 px-[19%] lg:px-2 xl:px-[19%] py-1">
             <p className="font-extrabold uppercase text-white text-[13px] xl:text-[16px] leading-[1.1] tracking-wide [text-shadow:0_1px_3px_rgba(0,0,0,0.5)]">
               Member
               <span className="block">Privileges</span>
             </p>
-            <ul className="flex flex-col">
+            <ul className="flex flex-col lg:hidden xl:flex">
               {privilegesList.map((item) => (
                 <li
                   key={item}

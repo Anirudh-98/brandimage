@@ -59,7 +59,7 @@ export default function Header({
         className={`${maxWidth} mx-auto px-3 sm:px-4 lg:px-4 py-1.5 flex flex-col lg:flex-row items-center lg:items-stretch gap-2 lg:gap-5`}
       >
         {/* Left: Brand Image Logo & Sub-tagline */}
-        <div className="flex flex-col items-start justify-center select-none flex-shrink-0">
+        <div className="flex flex-col items-start justify-center select-none flex-shrink-0 max-w-full">
           <Link href="/" className="flex items-center gap-2">
             <div className="relative w-12 h-14 flex-shrink-0">
               <Image
@@ -87,7 +87,7 @@ export default function Header({
           </Link>
 
           {/* Tagline under logo */}
-          <div className="text-[9px] xl:text-[10px] font-semibold text-[#3B1F7A] tracking-tight mt-1 flex items-center gap-1 whitespace-nowrap">
+          <div className="text-[8px] min-[400px]:text-[9px] xl:text-[10px] font-semibold text-[#3B1F7A] tracking-tight mt-1 flex flex-wrap items-center gap-x-1 gap-y-0.5 sm:flex-nowrap sm:whitespace-nowrap">
             <span>Knowledge</span>
             <span className="text-pink-400">|</span>
             <span>Experts</span>

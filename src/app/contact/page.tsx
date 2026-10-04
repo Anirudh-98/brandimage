@@ -12,10 +12,11 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   const details = [
     { icon: MapPin, label: "Office", value: CONTACT.address },
-    { icon: Phone, label: "Phone", value: CONTACT.phone, href: `tel:${CONTACT.phone}` },
+    { icon: Phone, label: "Phone", value: "89851 20237", href: `tel:${CONTACT.phone}` },
+    { icon: Phone, label: "Phone (alternate)", value: "89851 97720", href: `tel:${CONTACT.phone2}` },
     { icon: Mail, label: "General enquiries", value: CONTACT.email, href: `mailto:${CONTACT.email}` },
     { icon: Handshake, label: "Manufacturers, distributors & suppliers", value: CONTACT.partnerEmail, href: `mailto:${CONTACT.partnerEmail}` },
-    { icon: Globe, label: "Web portal", value: CONTACT.website },
+    { icon: Globe, label: "Website", value: CONTACT.website, href: CONTACT.websiteUrl },
   ];
 
   return (
